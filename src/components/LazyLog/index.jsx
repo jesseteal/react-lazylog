@@ -282,7 +282,7 @@ export default class LazyLog extends Component {
 
     this.endRequest();
 
-    if (text) {
+    if (typeof text === 'string') {
       const encodedLog = encode(text);
       const { lines, remaining } = convertBufferToLines(encodedLog);
 
@@ -291,6 +291,7 @@ export default class LazyLog extends Component {
         encodedLog,
       });
       this.handleEnd(encodedLog);
+
       return;
     }
 
