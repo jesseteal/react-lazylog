@@ -291,6 +291,7 @@ export default class LazyLog extends Component {
         encodedLog,
       });
       this.handleEnd(encodedLog);
+      return;
     }
 
     this.emitter = this.initEmitter();
